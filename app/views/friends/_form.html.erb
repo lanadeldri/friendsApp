@@ -1,0 +1,69 @@
+<!-- <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+
+
+
+
+
+
+<%= form_with(model: friend) do |form| %>
+  <% if friend.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+        <% friend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :twitter, style: "display: block" %>
+    <%= form.text_field :twitter, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.number_field :user_id, class:"form-control", id: :friend_user_id, value:current_user.id, type: "hidden"%>
+  </div>
+
+  <!-- <button type="submit" class="btn btn-primary"> -->
+    <%= form.submit class:"btn btn-primary"%>
+  <!-- </button> -->
+ 
+<% end %>

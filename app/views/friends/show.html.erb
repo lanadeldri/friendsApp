@@ -1,0 +1,16 @@
+
+
+<div class="jumbotron">
+  <h1 class="display-4 text-uppercase"><%= @friend.first_name %> <%=@friend.last_name %></h1>
+  <h3 class="display-8"><%= @friend.email %> | <%= @friend.phone %> | <%= @friend.twitter %></h3>
+
+<br/>
+
+  <div class="d-flex">
+    <%= button_to "Edit this friend", edit_friend_path(@friend), class: "btn btn-secondary btn-sm  d-inline p-2" %> 
+    <%= button_to "Back to friends", friends_path, class: "btn btn-sm btn-secondary  d-inline p-2"%>  
+    <%= button_to 'Delete', @friend, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm d-inline p-2" %>
+  </div>
+</div>
+
+

@@ -28,7 +28,7 @@ production:
     <<: *default
     adapter: postgresql
     encoding: unicode
-    # Configure these environment variables on your production server
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     url: <%= ENV['DATABASE_URL'] %>
 
   cable:

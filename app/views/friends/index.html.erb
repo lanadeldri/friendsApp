@@ -24,7 +24,7 @@
           <td><%= friend.email %></td>
           <td><%= friend.phone %></td>
           <td><%= friend.twitter %></td>
-          <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+          <td><%= button_to 'Delete', friend, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
           
         </tr>
         <% end %>

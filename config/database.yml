@@ -25,12 +25,25 @@ test:
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production:
   primary:
-    <<: *default
     adapter: postgresql
-    encoding: unicode
-    url: <%= ENV['DATABASE_URL'] %>
+    database: <%= ENV['PRIMARY_DB_NAME'] %>
+    username: <%= ENV['PRIMARY_DB_USERNAME'] %>
+    password: <%= ENV['PRIMARY_DB_PASSWORD'] %>
+    host: <%= ENV['PRIMARY_DB_HOST'] %>
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
   cable:
     adapter: postgresql
-    url: <%= ENV['CABLE_DATABASE_URL'] %>
+    database: <%= ENV['CABLE_DB_NAME'] %>
+    username: <%= ENV['CABLE_DB_USERNAME'] %>
+    password: <%= ENV['CABLE_DB_PASSWORD'] %>
+    host: <%= ENV['CABLE_DB_HOST'] %>
+
+  queue:
+    adapter: postgresql
+    database: <%= ENV['QUEUE_DB_NAME'] %>
+    username: <%= ENV['QUEUE_DB_USERNAME'] %>
+    password: <%= ENV['QUEUE_DB_PASSWORD'] %>
+    host: <%= ENV['QUEUE_DB_HOST'] %>
+
 

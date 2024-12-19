@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 ruby '3.3.6'
-gem "rails", "~> 8.0.0", ">= 8.0.0.1"
+gem "rails", "~> 8.0.1"
 gem "propshaft"
 
 gem 'rubocop', '~> 1.69', '>= 1.69.2'

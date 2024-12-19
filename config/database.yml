@@ -47,3 +47,11 @@ production:
     host: <%= ENV['QUEUE_DB_HOST'] %>
 
 
+  cache:
+    adapter: postgresql
+    database: <%= ENV['CACHE_DB_NAME'] %>
+    username: <%= ENV['CACHE_DB_USERNAE'] %>
+    password: <%= ENV['CACHE_DB_PASSWORD'] %>
+    host: <%= ENV['CACHE_DB_HOST'] %>
+
+

@@ -30,3 +30,7 @@ production:
     encoding: unicode
     # Configure these environment variables on your production server
     url: <%= ENV['DATABASE_URL'] %>
+
+  cable:
+    adapter: postgresql
+    url: <%= ENV['CABLE_DATABASE_URL'] %>

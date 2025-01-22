@@ -3,7 +3,7 @@ ruby '3.3.6'
 gem "rails", "~> 8.0.0", ">= 8.0.0.1"
 gem "propshaft"
 
-gem 'rubocop', '~> 1.69', '>= 1.69.2'
+gem 'rubocop', '~> 1.71'
 gem "puma", ">= 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
